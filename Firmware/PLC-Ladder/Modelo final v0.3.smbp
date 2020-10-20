@@ -2,8 +2,8 @@
 <ProjectDescriptor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectVersion>2.5.0.0</ProjectVersion>
   <ManagementLevel>FunctLevelMan16_0</ManagementLevel>
-  <Name>Modelo final v1.2</Name>
-  <FullName>C:\Archivos\PLC\Modelo final v1.2.smbp</FullName>
+  <Name>Modelo final v0.3</Name>
+  <FullName>C:\Archivos\Git Repo\DUV Robot\PSP_Robot_DUVBot\Firmware\PLC-Ladder\Modelo final v0.3.smbp</FullName>
   <CurrentCultureName>es-ES</CurrentCultureName>
   <SoftwareConfiguration>
     <Pous>
@@ -3574,7 +3574,7 @@
               </LadderEntity>
               <LadderEntity>
                 <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW11 &lt; 0</ComparisonExpression>
+                <ComparisonExpression>%MW10 &lt; 0</ComparisonExpression>
                 <Row>0</Row>
                 <Column>0</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
@@ -3582,7 +3582,7 @@
             </LadderElements>
             <InstructionLines>
               <InstructionLineEntity>
-                <InstructionLine>LD    [ %MW11 &lt; 0 ]</InstructionLine>
+                <InstructionLine>LD    [ %MW10 &lt; 0 ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
@@ -3599,7 +3599,7 @@
             <LadderElements>
               <LadderEntity>
                 <ElementType>Operation</ElementType>
-                <OperationExpression>%PWM0.R := %MW12</OperationExpression>
+                <OperationExpression>%PWM0.R := %MW13</OperationExpression>
                 <Row>0</Row>
                 <Column>9</Column>
                 <ChosenConnection>Left</ChosenConnection>
@@ -3665,7 +3665,7 @@
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
-                <InstructionLine>[ %PWM0.R := %MW12 ]</InstructionLine>
+                <InstructionLine>[ %PWM0.R := %MW13 ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
             </InstructionLines>
@@ -3678,7 +3678,7 @@
             <LadderElements>
               <LadderEntity>
                 <ElementType>Operation</ElementType>
-                <OperationExpression>%PWM1.R := %MW13</OperationExpression>
+                <OperationExpression>%PWM1.R := %MW14</OperationExpression>
                 <Row>0</Row>
                 <Column>9</Column>
                 <ChosenConnection>Left</ChosenConnection>
@@ -3744,7 +3744,7 @@
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
-                <InstructionLine>[ %PWM1.R := %MW13 ]</InstructionLine>
+                <InstructionLine>[ %PWM1.R := %MW14 ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
             </InstructionLines>
@@ -3764,7 +3764,7 @@
               <LadderEntity>
                 <ElementType>Register</ElementType>
                 <Descriptor>%R0</Descriptor>
-                <Comment>Pasos Izquierda</Comment>
+                <Comment>Distancia</Comment>
                 <Symbol />
                 <Row>0</Row>
                 <Column>2</Column>
@@ -3856,7 +3856,7 @@
                 <Comment />
               </InstructionLineEntity>
             </InstructionLines>
-            <Name>Pasos Izquierda</Name>
+            <Name>Distancia</Name>
             <MainComment />
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
@@ -3866,7 +3866,7 @@
               <LadderEntity>
                 <ElementType>Register</ElementType>
                 <Descriptor>%R1</Descriptor>
-                <Comment>Pasos Derecha</Comment>
+                <Comment>Velocidad</Comment>
                 <Symbol />
                 <Row>0</Row>
                 <Column>2</Column>
@@ -3958,7 +3958,7 @@
                 <Comment />
               </InstructionLineEntity>
             </InstructionLines>
-            <Name>Pasos Derecha</Name>
+            <Name>Velocidad</Name>
             <MainComment />
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
@@ -3968,7 +3968,7 @@
               <LadderEntity>
                 <ElementType>Register</ElementType>
                 <Descriptor>%R2</Descriptor>
-                <Comment>Velocidad Izquierda</Comment>
+                <Comment>Ratio Ruedas</Comment>
                 <Symbol />
                 <Row>0</Row>
                 <Column>2</Column>
@@ -4060,103 +4060,7 @@
                 <Comment />
               </InstructionLineEntity>
             </InstructionLines>
-            <Name>Velocidad Izquierda</Name>
-            <MainComment />
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Register</ElementType>
-                <Descriptor>%R3</Descriptor>
-                <Comment>Velocidad Derecha</Comment>
-                <Symbol />
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>NormalContact</ElementType>
-                <Descriptor>%M44</Descriptor>
-                <Comment>Reset FIFOS</Comment>
-                <Symbol>RST_FIFO</Symbol>
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>1</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>2</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>RisingEdge</ElementType>
-                <Descriptor>%M16</Descriptor>
-                <Comment>Carga en fifo</Comment>
-                <Symbol>FIFO_IN</Symbol>
-                <Row>1</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>RisingEdge</ElementType>
-                <Descriptor>%M17</Descriptor>
-                <Comment>Descarga de fifo</Comment>
-                <Symbol>FIFO_OUT</Symbol>
-                <Row>2</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>BLK   %R3</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>LD    %M44</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>R</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>LDR   %M16</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>I</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>LDR   %M17</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>O</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>END_BLK</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name>Velocidad Derecha</Name>
+            <Name>Ratio Ruedas</Name>
             <MainComment />
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
@@ -4264,29 +4168,10 @@
                 <ChosenConnection>Left</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <OperationExpression>%MW13 := %R3.O</OperationExpression>
-                <Row>3</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>3</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Row>3</Row>
-                <Column>7</Column>
-                <ChosenConnection>Up, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
                 <ElementType>VerticalLine</ElementType>
                 <Row>2</Row>
                 <Column>7</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
+                <ChosenConnection>Up, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>VerticalLine</ElementType>
@@ -4322,10 +4207,6 @@
               </InstructionLineEntity>
               <InstructionLineEntity>
                 <InstructionLine>[ %MW12 := %R2.O ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[ %MW13 := %R3.O ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
             </InstructionLines>
@@ -4415,29 +4296,10 @@
                 <ChosenConnection>Left</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <OperationExpression>%R3.I := 0</OperationExpression>
-                <Row>3</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Row>3</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Row>3</Row>
-                <Column>7</Column>
-                <ChosenConnection>Up, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
                 <ElementType>VerticalLine</ElementType>
                 <Row>2</Row>
                 <Column>7</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
+                <ChosenConnection>Up, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>VerticalLine</ElementType>
@@ -4473,10 +4335,6 @@
               </InstructionLineEntity>
               <InstructionLineEntity>
                 <InstructionLine>[ %R2.I := 0 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[ %R3.I := 0 ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
             </InstructionLines>
@@ -4565,12 +4423,6 @@
                 <Column>1</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
               </LadderEntity>
-              <LadderEntity>
-                <ElementType>None</ElementType>
-                <Row>1</Row>
-                <Column>7</Column>
-                <ChosenConnection>None</ChosenConnection>
-              </LadderEntity>
             </LadderElements>
             <InstructionLines>
               <InstructionLineEntity>
@@ -4595,13 +4447,6 @@
                 <Row>0</Row>
                 <Column>0</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW11 &gt;= 0</ComparisonExpression>
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>NormalContact</ElementType>
@@ -4711,14 +4556,22 @@
                 <Column>3</Column>
                 <ChosenConnection>Up, Down, Right</ChosenConnection>
               </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>2</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>3</Column>
+                <ChosenConnection>Down, Left, Right</ChosenConnection>
+              </LadderEntity>
             </LadderElements>
             <InstructionLines>
               <InstructionLineEntity>
                 <InstructionLine>LD    [ %MW10 &gt;= 0 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW11 &gt;= 0 ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
@@ -4763,13 +4616,6 @@
                 <Row>0</Row>
                 <Column>0</Column>
                 <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Comparison</ElementType>
-                <ComparisonExpression>%MW11 &lt;= 0</ComparisonExpression>
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
               </LadderEntity>
               <LadderEntity>
                 <ElementType>NormalContact</ElementType>
@@ -4879,14 +4725,22 @@
                 <Column>3</Column>
                 <ChosenConnection>Up, Down, Right</ChosenConnection>
               </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>2</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>3</Column>
+                <ChosenConnection>Down, Left, Right</ChosenConnection>
+              </LadderEntity>
             </LadderElements>
             <InstructionLines>
               <InstructionLineEntity>
                 <InstructionLine>LD    [ %MW10 &lt;= 0 ]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>AND   [ %MW11 &lt;= 0 ]</InstructionLine>
                 <Comment />
               </InstructionLineEntity>
               <InstructionLineEntity>
@@ -4919,6 +4773,619 @@
               </InstructionLineEntity>
             </InstructionLines>
             <Name>Colision en Retroceso</Name>
+            <MainComment />
+            <Label />
+            <IsLadderSelected>true</IsLadderSelected>
+          </RungEntity>
+        </Rungs>
+      </ProgramOrganizationUnits>
+      <ProgramOrganizationUnits>
+        <Name>Traduccion de Comandos</Name>
+        <SectionNumber>0</SectionNumber>
+        <Rungs>
+          <RungEntity>
+            <LadderElements>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <Comment />
+                <Symbol />
+                <OperationExpression>%MW14 := %MW11 * (%MW12 / 100)</OperationExpression>
+                <Row>0</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>0</Row>
+                <Column>8</Column>
+                <ChosenConnection>Down, Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>0</Row>
+                <Column>7</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>0</Row>
+                <Column>6</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>0</Row>
+                <Column>5</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>0</Row>
+                <Column>4</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Comparison</ElementType>
+                <Comment />
+                <Symbol />
+                <ComparisonExpression>%MW12 &lt;= 100</ComparisonExpression>
+                <Row>0</Row>
+                <Column>0</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <Comment />
+                <Symbol />
+                <OperationExpression>%MW13 := %MW11</OperationExpression>
+                <Row>1</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>VerticalLine</ElementType>
+                <Comment />
+                <Symbol />
+                <Row>1</Row>
+                <Column>8</Column>
+                <ChosenConnection>Up, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Comparison</ElementType>
+                <ComparisonExpression>%MW12 &gt;= 0</ComparisonExpression>
+                <Row>0</Row>
+                <Column>2</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+            </LadderElements>
+            <InstructionLines>
+              <InstructionLineEntity>
+                <InstructionLine>LD [ %MW12 &lt;= 100 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>AND [ %MW12 &gt;= 0 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[%MW14 := %MW11 * (%MW12 / 100)]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[ %MW13 := %MW11 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+            </InstructionLines>
+            <Name>Ratio &gt;= 100</Name>
+            <MainComment />
+            <Label />
+            <IsLadderSelected>true</IsLadderSelected>
+          </RungEntity>
+          <RungEntity>
+            <LadderElements>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <OperationExpression>%MW13 := %MW11 * ((200 - %MW12) / 100)</OperationExpression>
+                <Row>0</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>8</Column>
+                <ChosenConnection>Down, Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>7</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>6</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>5</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>4</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Comparison</ElementType>
+                <ComparisonExpression>%MW12 &gt; 100</ComparisonExpression>
+                <Row>0</Row>
+                <Column>0</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <OperationExpression>%MW14 := %MW11</OperationExpression>
+                <Row>1</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>VerticalLine</ElementType>
+                <Row>1</Row>
+                <Column>8</Column>
+                <ChosenConnection>Up, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Comparison</ElementType>
+                <ComparisonExpression>%MW12 &lt;= 200</ComparisonExpression>
+                <Row>0</Row>
+                <Column>2</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+            </LadderElements>
+            <InstructionLines>
+              <InstructionLineEntity>
+                <InstructionLine>LD [ %MW12 &gt; 100 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>AND [ %MW12 &lt;= 200 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[%MW13 := %MW11 * ((200 - %MW12) / 100)]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[ %MW14 := %MW11 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+            </InstructionLines>
+            <Name>Ratio &lt; 100</Name>
+            <MainComment />
+            <Label />
+            <IsLadderSelected>true</IsLadderSelected>
+          </RungEntity>
+        </Rungs>
+      </ProgramOrganizationUnits>
+      <ProgramOrganizationUnits>
+        <Name>Realimentacion Distancia</Name>
+        <SectionNumber>0</SectionNumber>
+        <Comment>Guarda la distancia cuando se hace una bajada del FIFO y calcula la distancia avanzada desde ese punto</Comment>
+        <Rungs>
+          <RungEntity>
+            <LadderElements>
+              <LadderEntity>
+                <ElementType>RisingEdge</ElementType>
+                <Descriptor>%M17</Descriptor>
+                <Comment>Descarga de fifo</Comment>
+                <Symbol>FIFO_OUT</Symbol>
+                <Row>0</Row>
+                <Column>0</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <OperationExpression>%MF6 := %MF0</OperationExpression>
+                <Row>0</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>8</Column>
+                <ChosenConnection>Down, Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>7</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>6</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>5</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>4</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>3</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>2</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>1</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <OperationExpression>%MF8 := %MF2</OperationExpression>
+                <Row>1</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <OperationExpression>%MF10 := %MF4</OperationExpression>
+                <Row>2</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>VerticalLine</ElementType>
+                <Row>2</Row>
+                <Column>8</Column>
+                <ChosenConnection>Up, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>VerticalLine</ElementType>
+                <Row>1</Row>
+                <Column>8</Column>
+                <ChosenConnection>Up, Down, Right</ChosenConnection>
+              </LadderEntity>
+            </LadderElements>
+            <InstructionLines>
+              <InstructionLineEntity>
+                <InstructionLine>LDR   %M17</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[ %MF6 := %MF0 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[ %MF8 := %MF2 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[ %MF10 := %MF4 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+            </InstructionLines>
+            <Name>Guardo Puntos</Name>
+            <MainComment />
+            <Label />
+            <IsLadderSelected>true</IsLadderSelected>
+          </RungEntity>
+          <RungEntity>
+            <LadderElements>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <OperationExpression>%MF12 := %MF0 - %MF6</OperationExpression>
+                <Row>0</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>8</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>7</Column>
+                <ChosenConnection>Down, Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>6</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>5</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>4</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>3</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>2</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>1</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>0</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <OperationExpression>%MF14 := %MF2 - %MF8</OperationExpression>
+                <Row>1</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <OperationExpression>%MF16 := SQRT( %MF14 * %MF14 + %MF12 * %MF12 )</OperationExpression>
+                <Row>2</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>2</Row>
+                <Column>8</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>VerticalLine</ElementType>
+                <Row>2</Row>
+                <Column>7</Column>
+                <ChosenConnection>Up, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>VerticalLine</ElementType>
+                <Row>1</Row>
+                <Column>7</Column>
+                <ChosenConnection>Up, Down, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>1</Row>
+                <Column>8</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+            </LadderElements>
+            <InstructionLines>
+              <InstructionLineEntity>
+                <InstructionLine>LD    1</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[ %MF12 := %MF0 - %MF6 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[ %MF14 := %MF2 - %MF8 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[ %MF16 := SQRT ( %MF14 * %MF14 + %MF12 * %MF12 ) ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+            </InstructionLines>
+            <Name>Calculo Distancia</Name>
+            <MainComment />
+            <Label />
+            <IsLadderSelected>true</IsLadderSelected>
+          </RungEntity>
+          <RungEntity>
+            <LadderElements>
+              <LadderEntity>
+                <ElementType>Operation</ElementType>
+                <OperationExpression>%MF18 := ABS(%MF20)</OperationExpression>
+                <Row>0</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>8</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>7</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>6</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>5</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>4</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>3</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>2</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>1</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>0</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+            </LadderElements>
+            <InstructionLines>
+              <InstructionLineEntity>
+                <InstructionLine>LD    1</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>[ %MF18 := ABS ( %MF20 ) ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+            </InstructionLines>
+            <Name>Modulo de Distancia</Name>
+            <MainComment />
+            <Label />
+            <IsLadderSelected>true</IsLadderSelected>
+          </RungEntity>
+          <RungEntity>
+            <LadderElements>
+              <LadderEntity>
+                <ElementType>Comparison</ElementType>
+                <ComparisonExpression>%MW8 &gt;= %MW9</ComparisonExpression>
+                <Row>0</Row>
+                <Column>0</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Coil</ElementType>
+                <Descriptor>%M20</Descriptor>
+                <Comment>Llegada a destino</Comment>
+                <Symbol />
+                <Row>0</Row>
+                <Column>10</Column>
+                <ChosenConnection>Left</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>9</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>8</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>7</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>6</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>5</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>4</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>3</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+              <LadderEntity>
+                <ElementType>Line</ElementType>
+                <Row>0</Row>
+                <Column>2</Column>
+                <ChosenConnection>Left, Right</ChosenConnection>
+              </LadderEntity>
+            </LadderElements>
+            <InstructionLines>
+              <InstructionLineEntity>
+                <InstructionLine>LD    [ %MW8 &gt;= %MW9 ]</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+              <InstructionLineEntity>
+                <InstructionLine>ST    %M20</InstructionLine>
+                <Comment />
+              </InstructionLineEntity>
+            </InstructionLines>
+            <Name>Flag Llegada Destino</Name>
             <MainComment />
             <Label />
             <IsLadderSelected>true</IsLadderSelected>
@@ -5044,6 +5511,11 @@
         <Index>17</Index>
         <Symbol>FIFO_OUT</Symbol>
         <Comment>Descarga de fifo</Comment>
+      </MemoryBit>
+      <MemoryBit>
+        <Address>%M20</Address>
+        <Index>20</Index>
+        <Comment>Llegada a destino</Comment>
       </MemoryBit>
       <MemoryBit>
         <Address>%M40</Address>
@@ -6409,26 +6881,87 @@
       <MemoryWord>
         <Address>%MW10</Address>
         <Index>10</Index>
-        <Comment>Comando Rueda Izquierda</Comment>
+        <Comment>Buffer Distancia (WORD)</Comment>
       </MemoryWord>
       <MemoryWord>
         <Address>%MW11</Address>
         <Index>11</Index>
-        <Comment>Comando Rueda Derecha</Comment>
+        <Comment>Buffer Velocidad</Comment>
       </MemoryWord>
       <MemoryWord>
         <Address>%MW12</Address>
         <Index>12</Index>
-        <Comment>Velocidad Rueda Izquierda</Comment>
+        <Comment>Buffer de Ratio/Angulo</Comment>
       </MemoryWord>
       <MemoryWord>
         <Address>%MW13</Address>
         <Index>13</Index>
-        <Comment>Velocidad Rueda Derecha</Comment>
+        <Comment>Velocidad Izquierda</Comment>
+      </MemoryWord>
+      <MemoryWord>
+        <Address>%MW14</Address>
+        <Index>14</Index>
+        <Comment>Velocidad Derecha</Comment>
       </MemoryWord>
     </MemoryWords>
     <MemoryDoubleWords />
-    <MemoryFloats />
+    <MemoryFloats>
+      <MemoryFloat>
+        <Address>%MF0</Address>
+        <Index>0</Index>
+        <Comment>X Actual</Comment>
+      </MemoryFloat>
+      <MemoryFloat>
+        <Address>%MF2</Address>
+        <Index>2</Index>
+        <Comment>Y Actual</Comment>
+      </MemoryFloat>
+      <MemoryFloat>
+        <Address>%MF4</Address>
+        <Index>4</Index>
+        <Comment>θ Actual</Comment>
+      </MemoryFloat>
+      <MemoryFloat>
+        <Address>%MF6</Address>
+        <Index>6</Index>
+        <Comment>X Referencia</Comment>
+      </MemoryFloat>
+      <MemoryFloat>
+        <Address>%MF8</Address>
+        <Index>8</Index>
+        <Comment>Y Referencia</Comment>
+      </MemoryFloat>
+      <MemoryFloat>
+        <Address>%MF10</Address>
+        <Index>10</Index>
+        <Comment>θ Referencia</Comment>
+      </MemoryFloat>
+      <MemoryFloat>
+        <Address>%MF12</Address>
+        <Index>12</Index>
+        <Comment>Xa - Xr</Comment>
+      </MemoryFloat>
+      <MemoryFloat>
+        <Address>%MF14</Address>
+        <Index>14</Index>
+        <Comment>Ya - Yr</Comment>
+      </MemoryFloat>
+      <MemoryFloat>
+        <Address>%MF16</Address>
+        <Index>16</Index>
+        <Comment>Distancia a la referencia</Comment>
+      </MemoryFloat>
+      <MemoryFloat>
+        <Address>%MF18</Address>
+        <Index>18</Index>
+        <Comment>Modulo del buffer de distancia</Comment>
+      </MemoryFloat>
+      <MemoryFloat>
+        <Address>%MF20</Address>
+        <Index>20</Index>
+        <Comment>Buffer de distancia (FLOAT)</Comment>
+      </MemoryFloat>
+    </MemoryFloats>
     <ConstantWords />
     <ConstantDoubleWords />
     <ConstantMemoryFloats />
@@ -6542,22 +7075,17 @@
       <Register>
         <Address>%R0</Address>
         <Index>0</Index>
-        <Comment>Pasos Izquierda</Comment>
+        <Comment>Distancia</Comment>
       </Register>
       <Register>
         <Address>%R1</Address>
         <Index>1</Index>
-        <Comment>Pasos Derecha</Comment>
+        <Comment>Velocidad</Comment>
       </Register>
       <Register>
         <Address>%R2</Address>
         <Index>2</Index>
-        <Comment>Velocidad Izquierda</Comment>
-      </Register>
-      <Register>
-        <Address>%R3</Address>
-        <Index>3</Index>
-        <Comment>Velocidad Derecha</Comment>
+        <Comment>Ratio Ruedas</Comment>
       </Register>
     </Registers>
     <Drums />
@@ -6593,2095 +7121,7 @@
       <WatchdogPeriod>250</WatchdogPeriod>
     </CpuBehavior>
     <TraceTimeBase>Time5Sec</TraceTimeBase>
-    <UserFunctionPous>
-      <UserFunctionPou>
-        <Name>ORIENTACION</Name>
-        <SectionNumber>2</SectionNumber>
-        <Rungs>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR1 := DINT_TO_REAL(%PARAM1)</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD  1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR1 := DINT_TO_REAL(%PARAM1)]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>%VAR1 = cuenta contador R</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR0 := DINT_TO_REAL(%PARAM0)</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD  1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR0 := DINT_TO_REAL(%PARAM0)]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>%VAR0 = cuenta contador L</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR2 := 0.083</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR3 := 1.0</OperationExpression>
-                <Row>1</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>1</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR4 := 300.0</OperationExpression>
-                <Row>2</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR5 := ((2.0 * 3.141592) * %VAR2) / (%VAR3 * %VAR4)</OperationExpression>
-                <Row>3</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>2</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>3</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR6 := %VAR5 * %VAR0</OperationExpression>
-                <Row>4</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR7 := %VAR5 * %VAR1</OperationExpression>
-                <Row>5</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>4</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>5</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR8 := (%VAR7 + %VAR6) / 2.0</OperationExpression>
-                <Row>6</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>6</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR10 := (%VAR7 - %VAR6) / %VAR9</OperationExpression>
-                <Row>8</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>7</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR11 := 0.0</OperationExpression>
-                <Row>9</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR11 := %VAR11 + %VAR10</OperationExpression>
-                <Row>10</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%RET0 := %VAR11</OperationExpression>
-                <Row>11</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>8</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>9</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>10</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>11</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR9 := 0.5</OperationExpression>
-                <Row>7</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD  1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR2 := 0.083]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR3 := 1.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR4 := 300.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR5 := ((2.0 * 3.141592) * %VAR2) / (%VAR3 * %VAR4)]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR6 := %VAR5 * %VAR0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR7 := %VAR5 * %VAR1]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR8 := (%VAR7 + %VAR6) / 2.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR9 := 0.5]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR10 := (%VAR7 - %VAR6) / %VAR9]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR11 := 0.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR11 := %VAR11 + %VAR10]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%RET0 := %VAR11]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>%VAR2=R, %VAR3=N, %VAR4= Pasos, %VAR5=Cm, %VAR6= ΔSl, %VAR7=ΔSr, %VAR8=ΔSC, %VAR9= L, %VAR10= Δθc, %VAR11=θi</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-        </Rungs>
-        <UserFunctionObjects>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.RETF0</Address>
-            <Index>0</Index>
-            <Comment>Orientacion</Comment>
-            <Type>ReturnValue</Type>
-            <DisplayedAddress>%RET0</DisplayedAddress>
-            <CompiledAddress>%UDFRETURNF0</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Double</CompiledType>
-            <Address>%UDF0.PARAMD0</Address>
-            <Index>1</Index>
-            <Type>Parameter</Type>
-            <DisplayedAddress>%PARAM0</DisplayedAddress>
-            <CompiledAddress>%UDFPARAMD0</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Double</CompiledType>
-            <Address>%UDF0.PARAMD1</Address>
-            <Index>2</Index>
-            <Type>Parameter</Type>
-            <DisplayedAddress>%PARAM1</DisplayedAddress>
-            <CompiledAddress>%UDFPARAMD1</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF0</Address>
-            <Index>3</Index>
-            <Comment>Cuenta encoder L</Comment>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR0</DisplayedAddress>
-            <CompiledAddress>%UDFVARF0</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF1</Address>
-            <Index>4</Index>
-            <Comment>Cuenta Encoder R</Comment>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR1</DisplayedAddress>
-            <CompiledAddress>%UDFVARF1</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF2</Address>
-            <Index>5</Index>
-            <Comment>Radio de la Rueda</Comment>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR2</DisplayedAddress>
-            <CompiledAddress>%UDFVARF2</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF3</Address>
-            <Index>6</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR3</DisplayedAddress>
-            <CompiledAddress>%UDFVARF3</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF4</Address>
-            <Index>7</Index>
-            <Comment>Pasos</Comment>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR4</DisplayedAddress>
-            <CompiledAddress>%UDFVARF4</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF5</Address>
-            <Index>8</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR5</DisplayedAddress>
-            <CompiledAddress>%UDFVARF5</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF6</Address>
-            <Index>9</Index>
-            <Comment>ΔSL</Comment>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR6</DisplayedAddress>
-            <CompiledAddress>%UDFVARF6</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF7</Address>
-            <Index>10</Index>
-            <Comment>ΔSR:</Comment>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR7</DisplayedAddress>
-            <CompiledAddress>%UDFVARF7</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF8</Address>
-            <Index>11</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR8</DisplayedAddress>
-            <CompiledAddress>%UDFVARF8</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF9</Address>
-            <Index>12</Index>
-            <Comment>Longitud Eje</Comment>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR9</DisplayedAddress>
-            <CompiledAddress>%UDFVARF9</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF10</Address>
-            <Index>13</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR10</DisplayedAddress>
-            <CompiledAddress>%UDFVARF10</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF0.VARF11</Address>
-            <Index>14</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR11</DisplayedAddress>
-            <CompiledAddress>%UDFVARF11</CompiledAddress>
-          </UserFunctionObject>
-        </UserFunctionObjects>
-        <Description>%RET0: Orientacion
-%PARAM0: Cuenta encoder L
-%PARAM1: Cuenta encoder R
-ΔSL: Avanze lineal Rueda Izquierda
-ΔSR: Avanze lineal Rueda Derecha</Description>
-      </UserFunctionPou>
-      <UserFunctionPou>
-        <Name>COORD_X</Name>
-        <SectionNumber>4</SectionNumber>
-        <Rungs>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR0 := DINT_TO_REAL(%PARAM0)</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD  1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR0 := DINT_TO_REAL(%PARAM0)]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>%VAR0 = cuenta contador L</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR1 := DINT_TO_REAL(%PARAM1)</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD  1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR1 := DINT_TO_REAL(%PARAM1)]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>%VAR0 = cuenta contador R</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR2 := 0.083</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR3 := 1.0</OperationExpression>
-                <Row>1</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR4 := 300.0</OperationExpression>
-                <Row>2</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>2</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>1</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR5 := ((2.0 * 3.141591) * %VAR2) / (%VAR3 * %VAR4)</OperationExpression>
-                <Row>3</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR6 := %VAR5 * %VAR0</OperationExpression>
-                <Row>4</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>3</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>4</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR7 := %VAR5 * %VAR1</OperationExpression>
-                <Row>5</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR8 := (%VAR6 + %VAR7) / 2.0</OperationExpression>
-                <Row>6</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>6</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>5</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR9 := 0.5</OperationExpression>
-                <Row>7</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>7</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR10 := (%VAR7 - %VAR6) / %VAR9</OperationExpression>
-                <Row>8</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR11 := 0.0</OperationExpression>
-                <Row>9</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR11 := %VAR11 + %VAR10</OperationExpression>
-                <Row>10</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>10</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>9</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>8</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR12 := 0.0</OperationExpression>
-                <Row>11</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>11</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR12 := %VAR12 + %VAR8 * COS( %VAR11 )</OperationExpression>
-                <Row>12</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%RET0 := %VAR12</OperationExpression>
-                <Row>13</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>13</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>12</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD  1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR2 := 0.083]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR3 := 1.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR4 := 300.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR5 := ((2.0 * 3.141591) * %VAR2) / (%VAR3 * %VAR4)]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR6 := %VAR5 * %VAR0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR7 := %VAR5 * %VAR1]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR8 := (%VAR6 + %VAR7) / 2.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR9 := 0.5]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR10 := (%VAR7 - %VAR6) / %VAR9]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR11 := 0.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR11 := %VAR11 + %VAR10]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR12 := 0.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR12 := %VAR12 + %VAR8 * COS( %VAR11 )]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%RET0 := %VAR12]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>%VAR2=R, %VAR3=N, %VAR4= Pasos, %VAR5=Cm, %VAR6= ΔSl, %VAR7=ΔSr, %VAR8=ΔSC, %VAR9= L, %VAR10= Δθc, %VAR11=θi, %VAR12=Xi</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-        </Rungs>
-        <UserFunctionObjects>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.RETF0</Address>
-            <Index>0</Index>
-            <Type>ReturnValue</Type>
-            <DisplayedAddress>%RET0</DisplayedAddress>
-            <CompiledAddress>%UDFRETURNF1</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Double</CompiledType>
-            <Address>%UDF1.PARAMD0</Address>
-            <Index>1</Index>
-            <Type>Parameter</Type>
-            <DisplayedAddress>%PARAM0</DisplayedAddress>
-            <CompiledAddress>%UDFPARAMD2</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Double</CompiledType>
-            <Address>%UDF1.PARAMD1</Address>
-            <Index>2</Index>
-            <Type>Parameter</Type>
-            <DisplayedAddress>%PARAM1</DisplayedAddress>
-            <CompiledAddress>%UDFPARAMD3</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF0</Address>
-            <Index>3</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR0</DisplayedAddress>
-            <CompiledAddress>%UDFVARF12</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF1</Address>
-            <Index>4</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR1</DisplayedAddress>
-            <CompiledAddress>%UDFVARF13</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF2</Address>
-            <Index>5</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR2</DisplayedAddress>
-            <CompiledAddress>%UDFVARF14</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF3</Address>
-            <Index>6</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR3</DisplayedAddress>
-            <CompiledAddress>%UDFVARF15</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF4</Address>
-            <Index>7</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR4</DisplayedAddress>
-            <CompiledAddress>%UDFVARF16</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF5</Address>
-            <Index>8</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR5</DisplayedAddress>
-            <CompiledAddress>%UDFVARF17</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF6</Address>
-            <Index>9</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR6</DisplayedAddress>
-            <CompiledAddress>%UDFVARF18</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF7</Address>
-            <Index>10</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR7</DisplayedAddress>
-            <CompiledAddress>%UDFVARF19</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF8</Address>
-            <Index>11</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR8</DisplayedAddress>
-            <CompiledAddress>%UDFVARF20</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF9</Address>
-            <Index>12</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR9</DisplayedAddress>
-            <CompiledAddress>%UDFVARF21</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF10</Address>
-            <Index>13</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR10</DisplayedAddress>
-            <CompiledAddress>%UDFVARF22</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF11</Address>
-            <Index>14</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR11</DisplayedAddress>
-            <CompiledAddress>%UDFVARF23</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF1.VARF12</Address>
-            <Index>15</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR12</DisplayedAddress>
-            <CompiledAddress>%UDFVARF24</CompiledAddress>
-          </UserFunctionObject>
-        </UserFunctionObjects>
-        <Description>%RET0: Coordenada en X
-%PARAM0: Cuenta encoder L
-%PARAM1: Cuenta encoder R</Description>
-      </UserFunctionPou>
-      <UserFunctionPou>
-        <Name>COORD_Y</Name>
-        <SectionNumber>3</SectionNumber>
-        <Rungs>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR0 := DINT_TO_REAL(%PARAM0)</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD  1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR0 := DINT_TO_REAL(%PARAM0)]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>%VAR0 = cuenta contador L</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR1 := DINT_TO_REAL(%PARAM1)</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD  1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR1 := DINT_TO_REAL(%PARAM1)]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>%VAR1 = cuenta contador R</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-          <RungEntity>
-            <LadderElements>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR2 := 0.05</OperationExpression>
-                <Row>0</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>8</Column>
-                <ChosenConnection>Down, Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>7</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>6</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>5</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>4</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>3</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>2</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>1</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Line</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>0</Row>
-                <Column>0</Column>
-                <ChosenConnection>Left, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR3 := 1.0</OperationExpression>
-                <Row>1</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR4 := 300.0</OperationExpression>
-                <Row>2</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>2</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>1</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR5 := ((2.0 * 3.141591) * %VAR2) / (%VAR3 * %VAR4)</OperationExpression>
-                <Row>3</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR6 := %VAR5 * %VAR0</OperationExpression>
-                <Row>4</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>3</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>4</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR7 := %VAR5 * %VAR1</OperationExpression>
-                <Row>5</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR8 := (%VAR6 + %VAR7) / 2.0</OperationExpression>
-                <Row>6</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>6</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>5</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR9 := 0.5</OperationExpression>
-                <Row>7</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>7</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR10 := (%VAR7 - %VAR6) / %VAR9</OperationExpression>
-                <Row>8</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR11 := 0.0</OperationExpression>
-                <Row>9</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR11 := %VAR11 + %VAR10</OperationExpression>
-                <Row>10</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>10</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>9</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>8</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR12 := 0.0</OperationExpression>
-                <Row>11</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>11</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%VAR12 := %VAR12 + %VAR8 * SIN( %VAR11 )</OperationExpression>
-                <Row>12</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>Operation</ElementType>
-                <Comment />
-                <Symbol />
-                <OperationExpression>%RET0 := %VAR12</OperationExpression>
-                <Row>13</Row>
-                <Column>9</Column>
-                <ChosenConnection>Left</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>13</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Right</ChosenConnection>
-              </LadderEntity>
-              <LadderEntity>
-                <ElementType>VerticalLine</ElementType>
-                <Comment />
-                <Symbol />
-                <Row>12</Row>
-                <Column>8</Column>
-                <ChosenConnection>Up, Down, Right</ChosenConnection>
-              </LadderEntity>
-            </LadderElements>
-            <InstructionLines>
-              <InstructionLineEntity>
-                <InstructionLine>LD  1</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR2 := 0.05]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR3 := 1.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR4 := 300.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR5 := ((2.0 * 3.141591) * %VAR2) / (%VAR3 * %VAR4)]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR6 := %VAR5 * %VAR0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR7 := %VAR5 * %VAR1]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR8 := (%VAR6 + %VAR7) / 2.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR9 := 0.5]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR10 := (%VAR7 - %VAR6) / %VAR9]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR11 := 0.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR11 := %VAR11 + %VAR10]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR12 := 0.0]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%VAR12 := %VAR12 + %VAR8 * SIN( %VAR11 )]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-              <InstructionLineEntity>
-                <InstructionLine>[%RET0 := %VAR12]</InstructionLine>
-                <Comment />
-              </InstructionLineEntity>
-            </InstructionLines>
-            <Name />
-            <MainComment>%VAR2=R, %VAR3=N, %VAR4= Pasos, %VAR5=Cm, %VAR6= ΔSl, %VAR7=ΔSr, %VAR8=ΔSC, %VAR9= L, %VAR10= Δθc, %VAR11=θi, %VAR12=Yi</MainComment>
-            <Label />
-            <IsLadderSelected>true</IsLadderSelected>
-          </RungEntity>
-        </Rungs>
-        <UserFunctionObjects>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.RETF0</Address>
-            <Index>0</Index>
-            <Type>ReturnValue</Type>
-            <DisplayedAddress>%RET0</DisplayedAddress>
-            <CompiledAddress>%UDFRETURNF2</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Double</CompiledType>
-            <Address>%UDF2.PARAMD0</Address>
-            <Index>1</Index>
-            <Type>Parameter</Type>
-            <DisplayedAddress>%PARAM0</DisplayedAddress>
-            <CompiledAddress>%UDFPARAMD4</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Double</CompiledType>
-            <Address>%UDF2.PARAMD1</Address>
-            <Index>2</Index>
-            <Type>Parameter</Type>
-            <DisplayedAddress>%PARAM1</DisplayedAddress>
-            <CompiledAddress>%UDFPARAMD5</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF0</Address>
-            <Index>3</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR0</DisplayedAddress>
-            <CompiledAddress>%UDFVARF25</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF1</Address>
-            <Index>4</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR1</DisplayedAddress>
-            <CompiledAddress>%UDFVARF26</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF2</Address>
-            <Index>5</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR2</DisplayedAddress>
-            <CompiledAddress>%UDFVARF27</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF3</Address>
-            <Index>6</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR3</DisplayedAddress>
-            <CompiledAddress>%UDFVARF28</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF4</Address>
-            <Index>7</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR4</DisplayedAddress>
-            <CompiledAddress>%UDFVARF29</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF5</Address>
-            <Index>8</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR5</DisplayedAddress>
-            <CompiledAddress>%UDFVARF30</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF6</Address>
-            <Index>9</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR6</DisplayedAddress>
-            <CompiledAddress>%UDFVARF31</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF7</Address>
-            <Index>10</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR7</DisplayedAddress>
-            <CompiledAddress>%UDFVARF32</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF8</Address>
-            <Index>11</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR8</DisplayedAddress>
-            <CompiledAddress>%UDFVARF33</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF9</Address>
-            <Index>12</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR9</DisplayedAddress>
-            <CompiledAddress>%UDFVARF34</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF10</Address>
-            <Index>13</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR10</DisplayedAddress>
-            <CompiledAddress>%UDFVARF35</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF11</Address>
-            <Index>14</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR11</DisplayedAddress>
-            <CompiledAddress>%UDFVARF36</CompiledAddress>
-          </UserFunctionObject>
-          <UserFunctionObject>
-            <CompiledType>Float</CompiledType>
-            <Address>%UDF2.VARF12</Address>
-            <Index>15</Index>
-            <Type>Variable</Type>
-            <DisplayedAddress>%VAR12</DisplayedAddress>
-            <CompiledAddress>%UDFVARF37</CompiledAddress>
-          </UserFunctionObject>
-        </UserFunctionObjects>
-        <Description>%RET0: Coordenada en Y
-%PARAM0: Cuenta encoder L
-%PARAM1: Cuenta encoder R</Description>
-      </UserFunctionPou>
-    </UserFunctionPous>
+    <UserFunctionPous />
     <UserFunctionBlockPous />
     <UserDefineFunctionBlocks />
   </SoftwareConfiguration>
@@ -8773,14 +7213,14 @@
             <Address>%I0.0</Address>
             <Index>0</Index>
             <Symbol>ENC1A</Symbol>
-            <Comment>Input</Comment>
+            <Comment>Encoder 1 A</Comment>
             <Filtering>FilteringsNoFilter</Filtering>
           </DiscretInput>
           <DiscretInput>
             <Address>%I0.1</Address>
             <Index>1</Index>
             <Symbol>ENC1B</Symbol>
-            <Comment>Enable</Comment>
+            <Comment>Encoder 1 B</Comment>
             <Filtering>FilteringsNoFilter</Filtering>
           </DiscretInput>
           <DiscretInput>
@@ -8803,12 +7243,14 @@
             <Address>%I0.6</Address>
             <Index>6</Index>
             <Symbol>ENC2A</Symbol>
+            <Comment>Encoder 2 A</Comment>
             <Filtering>FilteringsNoFilter</Filtering>
           </DiscretInput>
           <DiscretInput>
             <Address>%I0.7</Address>
             <Index>7</Index>
             <Symbol>ENC2B</Symbol>
+            <Comment>Encoder 2 B</Comment>
             <Filtering>FilteringsNoFilter</Filtering>
           </DiscretInput>
           <DiscretInput>
@@ -8890,11 +7332,13 @@
           <DiscretOutput>
             <Address>%Q0.8</Address>
             <Index>8</Index>
+            <Symbol>LAMP0</Symbol>
             <Comment>LAMPARAS BIT 0</Comment>
           </DiscretOutput>
           <DiscretOutput>
             <Address>%Q0.9</Address>
             <Index>9</Index>
+            <Symbol>LAMP1</Symbol>
             <Comment>LAMPARAS BIT 1</Comment>
           </DiscretOutput>
         </DigitalOutputs>
