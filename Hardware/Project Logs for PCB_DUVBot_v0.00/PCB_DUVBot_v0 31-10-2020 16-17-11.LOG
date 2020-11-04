@@ -1,0 +1,17 @@
+Removed Pin From Net: NetName=NetDZ402_2 Pin=U401-5
+Removed Pin From Net: NetName=PWMDRIVER1 Pin=U401-6
+Removed Pin From Net: NetName=PWMDRIVER1 Pin=U401-7
+Added Component: Designator=C403(C0603)
+Added Component: Designator=C404(C0603)
+Added Component: Designator=U402(D008_L)
+Added Pin To Net: NetName=+12 Pin=C403-1
+Added Pin To Net: NetName=GND Pin=C403-2
+Added Pin To Net: NetName=+12 Pin=C404-1
+Added Pin To Net: NetName=GND Pin=C404-2
+Added Pin To Net: NetName=PWMDRIVER1 Pin=U402-1
+Added Pin To Net: NetName=PWMDRIVER1 Pin=U402-2
+Added Pin To Net: NetName=NetDZ402_2 Pin=U402-3
+Added Pin To Net: NetName=GND Pin=U402-4
+Added Pin To Net: NetName=+12V Pin=U402-8
+Added Member To Class: ClassName=Motor Signal and Encoders Member=Component C403 Cap Ceramico SMD
+Added Member To Class: ClassName=Motor Signal and Encoders Member=Component C404 Cap Ceramico SMD

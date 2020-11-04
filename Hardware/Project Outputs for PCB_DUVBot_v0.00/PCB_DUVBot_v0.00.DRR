@@ -1,0 +1,26 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: PCB_DUVBot_v0.00.PcbDoc   3/11/2020  23:17:33
+---------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : PCB_DUVBot_v0.00.TXT
+EIA File   : PCB_DUVBot_v0.00.DRL
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        0.3mm (11.811mil)        Round          4                6.76 mm (0.27 Inch)
+T2        0.4mm (15.748mil)        Round          126              1200.35 mm (47.26 Inch)
+T3        0.5mm (19.685mil)        Round          4                17.91 mm (0.71 Inch)
+T4        0.6mm (23.622mil)        Round          108              630.73 mm (24.83 Inch)
+T5        0.762mm (30mil)          Round          32               867.72 mm (34.16 Inch)
+T6        0.9mm (35.433mil)        Round          14               312.72 mm (12.31 Inch)
+T7        1mm (39.37mil)           Round          21               112.28 mm (4.42 Inch)
+T8        1.2mm (47.244mil)        Round          129              1243.88 mm (48.97 Inch)
+T9        1.3mm (51.181mil)        Round          8                128.32 mm (5.05 Inch)
+T10       1.5mm (59.055mil)        Round          12               255.39 mm (10.05 Inch)
+T11       3.25mm (127.953mil)      Round          4                817.75 mm (32.20 Inch)
+T12       0.65mm (25.591mil)       Round          2         NPTH   7.20 mm (0.28 Inch)
+---------------------------------------------------------------------------
+Totals                                            464              5601.02 mm (220.51 Inch)
+
+Total Processing Time (hh:mm:ss) : 00:00:01

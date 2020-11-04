@@ -1,0 +1,5 @@
+Added Pin To Net: NetName=GND Pin=U401-5
+Added Pin To Net: NetName=GND Pin=U401-6
+Added Pin To Net: NetName=GND Pin=U403-5
+Added Pin To Net: NetName=GND Pin=U403-6
+Added Member To Class: ClassName=Motor Signal and Encoders Member=Component U402 TPC817

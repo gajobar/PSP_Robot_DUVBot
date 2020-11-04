@@ -1,0 +1,3 @@
+Change Component Designator: OldDesignator=U402 NewDesignator=U403
+Change Component Designator: OldDesignator=U403 NewDesignator=U404
+Added Member To Class: ClassName=Motor Signal and Encoders Member=Component U404 TPC817
